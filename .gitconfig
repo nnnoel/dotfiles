@@ -1,0 +1,12 @@
+[user]
+	name = Noel Colon
+	email = ncolon20@gmail.com 
+[alias]
+	last = log -1 HEAD
+	log1 = log --oneline
+	unstage = reset HEAD --
+	branchname = rev-parse --abbrev-ref HEAD
+	rawbody = show -s --format=%B
+	lastcommit = !sh ~/.dotfiles/.github/git-lastcommit.sh
+	lastbranch = !sh ~/.dotfiles/.github/git-lastbranch.sh
+	openpr = !sh ~/.dotfiles/.github/hub-openpr.sh

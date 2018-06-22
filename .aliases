@@ -1,0 +1,23 @@
+alias zshrc="vim ~/.dotfiles/.zshrc"
+alias rzsh="source ~/.dotfiles/.zshrc"
+alias vimrc="vim ~/.dotfiles/.vimrc"
+alias aliases="vim ~/.dotfiles/.aliases"
+alias gitconfig="vim ~/.dotfiles/.gitconfig"
+alias dotfiles="cd ~/.dotfiles"
+
+alias cls="clear"
+alias l="ls -lha"
+
+alias ys="yarn start"
+alias yis="yarn;yarn start"
+
+alias gl1="git log --oneline"
+alias gcob="git checkout -B"
+alias gco="git checkout"
+alias gbd="git branch -D"
+alias gfu="git fetch upstream"
+alias gfo="git fetch origin"
+alias glb="git lastbranch"
+alias glc="git lastcommit"
+alias gss="git status -s"
+
