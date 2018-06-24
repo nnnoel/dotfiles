@@ -61,6 +61,7 @@ nnoremap <silent><Tab>q :tabclose<CR>
 augroup css_snippets
     autocmd!
     autocmd FileType css nnoremap <buffer> <localleader>c I/* <ESC>A */<ESC>
+    autocmd FileType css vnoremap <buffer> <localleader>c oI/* <ESC>gvo$A<Right> */<ESC>
 augroup END
 
 " JS snippets
