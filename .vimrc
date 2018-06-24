@@ -57,6 +57,12 @@ nnoremap <silent><Tab><Tab> :tabnew<CR>
 nnoremap <silent><Tab>q :tabclose<CR>
 
 " Filetype snippets --- {{{
+" CSS snippets
+augroup css_snippets
+    autocmd!
+    autocmd FileType css nnoremap <buffer> <localleader>c I/* <ESC>A */<ESC>
+augroup END
+
 " JS snippets
 augroup js_snippets
     autocmd!
