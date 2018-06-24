@@ -70,6 +70,7 @@ augroup js_snippets
     autocmd FileType javascript iabbrev af () => {}<Left>
     autocmd FileType javascript iabbrev ff () {}<Left>
     autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>
+    autocmd FileType javascript vnoremap <buffer> <localleader>c :s!^!//!<CR>
 augroup END
 
 " Python snippets
