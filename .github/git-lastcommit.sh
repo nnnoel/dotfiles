@@ -1,7 +1,5 @@
 #!bin/bash
 
-# Mac
-if [[ $(uname) == 'Darwin'  ]]; then
-	git show -s --format=%h | pbcopy
-	echo "Copied: $(git show -s --format=%h)"
-fi
+source $HOME/.dotfiles/utils.sh
+
+copy_to_clipboard "$(git show -s --format=%h)"
