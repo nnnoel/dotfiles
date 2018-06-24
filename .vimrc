@@ -62,13 +62,19 @@ augroup js_snippets
     autocmd!
     autocmd FileType javascript iabbrev af () => {}<Left>
     autocmd FileType javascript iabbrev ff () {}<Left>
-    autocmd FileType javascript nnoremap <buffer> <localleader>c I//<ESC>
+    autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>
 augroup END
 
 " Python snippets
 augroup py_snippets
     autocmd!
-    autocmd FileType python nnoremap <buffer> <localleader>c I#<ESC>
+    autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>
+augroup END
+
+" Bash snippets
+augroup sh_snippets
+    autocmd!
+    autocmd FileType sh nnoremap <buffer> <localleader>c I# <ESC>
 augroup END
 " }}}
 
