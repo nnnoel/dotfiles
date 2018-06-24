@@ -10,3 +10,4 @@
 	lastcommit = !sh ~/.dotfiles/.github/git-lastcommit.sh
 	lastbranch = !sh ~/.dotfiles/.github/git-lastbranch.sh
 	openpr = !sh ~/.dotfiles/.github/hub-openpr.sh
+	branches = !sh ~/.dotfiles/.github/git-branches.sh
