@@ -7,10 +7,6 @@ i=0
 BRANCHES=()
 eval "$(git for-each-ref --format='BRANCHES+=(%(refname:lstrip=2))' refs/heads/)"
 
-printf "\nSelect an option:\n"
-printf "($(print_y "a")) Checkout | ($(print_y "b")) Delete | ($(print_y "c")) Copy\n"
-read option
-
 printf "\nSelect a branch:\n"
 for b in "${BRANCHES[@]}"; do
 	printf "($(print_y %d)) %s \n" $i $b
@@ -18,6 +14,10 @@ for b in "${BRANCHES[@]}"; do
 done
 
 read choice
+
+printf "\nSelect an option:\n"
+printf "($(print_y "a")) Checkout | ($(print_y "b")) Delete | ($(print_y "c")) Copy\n"
+read option
 
 BRANCH="${BRANCHES[choice]}"
 
