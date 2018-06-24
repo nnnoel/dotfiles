@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $HOME/.dotfiles/utils.sh
+
 if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
@@ -30,17 +32,6 @@ brews=(
   hub
   ffmpeg
 )
-
-in_list(){
-  pkg=$1
-  shift
-  for item in $@; do
-    if [ "$pkg" == "$item" ]; then
-      return 0
-    fi
-  done
-  return 1
-}
 
 for pkg in ${brews[@]}; do
   if ! in_list $pkg "$(brew list)"; then

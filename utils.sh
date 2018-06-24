@@ -26,4 +26,14 @@ copy_to_clipboard() {
 	fi
 }
 
+in_list(){
+  pkg=$1
+  shift
+  for item in $@; do
+    if [ "$pkg" == "$item" ]; then
+      return 0
+    fi
+  done
+  return 1
+}
 
