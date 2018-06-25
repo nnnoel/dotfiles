@@ -56,6 +56,10 @@ nnoremap <silent><Tab>k :tablast<CR>
 nnoremap <silent><Tab><Tab> :tabnew<CR>
 nnoremap <silent><Tab>q :tabclose<CR>
 
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>ps :PlugStatus<CR>
+
 " Filetype snippets --- {{{
 " CSS snippets
 augroup css_snippets
