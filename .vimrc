@@ -120,6 +120,7 @@ Plug 'junegunn/fzf.vim'
 "Plug 'marijnh/tern_for_vim'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'severin-lemaignan/vim-minimap'
+Plug 'yangmillstheory/vim-snipe'
 Plug 'szw/vim-tags'
 "Plug 'mileszs/ack.vim'
 Plug 'junegunn/vim-easy-align'
@@ -131,6 +132,16 @@ call plug#end()
 "  }}}
 "
 "  Plugin settings --- {{{
+" VimSnipe
+map <leader><leader>f <Plug>(snipe-f)
+map <leader><leader>ge <Plug>(snipe-ge)
+nmap <leader><leader>] <Plug>(snipe-f-xp)
+nmap <leader><leader>[ <Plug>(snipe-F-xp)
+nmap <leader><leader>x <Plug>(snipe-f-x)
+nmap <leader><leader>X <Plug>(snipe-F-x)
+nmap <leader><leader>r <Plug>(snipe-f-r)
+nmap <leader><leader>R <Plug>(snipe-F-r)
+
 " FZF
 nnoremap <silent><Space> :Ag<CR>
 nnoremap <silent><C-P> :call fzf#run({ 'down': '40%', 'sink': 'vertical botright split' })<CR>
