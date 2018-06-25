@@ -71,6 +71,7 @@ augroup js_snippets
     autocmd FileType javascript iabbrev ff () {}<Left>
     autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>
     autocmd FileType javascript vnoremap <buffer> <localleader>c :s!^!//!<CR>
+    autocmd FileType javascript nnoremap <buffer> <localleader>de ggO /* eslint-disable */<ESC>
 augroup END
 
 " Python snippets
