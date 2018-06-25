@@ -95,6 +95,7 @@ augroup END
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim nnoremap <buffer> <localleader>c I" <ESC>
 augroup END
 " }}}
 
