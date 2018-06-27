@@ -45,6 +45,11 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 " Begin/end of line
 nnoremap B ^
 nnoremap E $
+
+" Copy to System Clipboard
+" Mac
+nnoremap <silent><leader>ypwd :call system('pbcopy', expand('%'))<CR>
+vnoremap <silent><leader>y y<ESC>:call system('pbcopy', @")<CR>
  
 " Buffers
 nnoremap <leader>m :buffers<CR>
