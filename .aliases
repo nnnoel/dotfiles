@@ -20,4 +20,5 @@ alias gfo="git fetch origin"
 alias glb="git lastbranch"
 alias glc="git lastcommit"
 alias gss="git status -s"
+alias gbb="git branches"
 
