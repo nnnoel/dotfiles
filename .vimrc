@@ -114,12 +114,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'skielbasa/vim-material-monokai'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'mattn/emmet-vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -132,11 +130,9 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'severin-lemaignan/vim-minimap'
 Plug 'yangmillstheory/vim-snipe'
 Plug 'szw/vim-tags'
-"Plug 'mileszs/ack.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale'
 call plug#end()
 "  }}}
@@ -192,11 +188,7 @@ xmap ga <Plug>(EasyAlign)
 let b:ale_fixers = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '>>'
-let g:airline#extensions#ale#enabled = 1
-"  Emmet
-"let g:user_emmet_leader_key='<C-A>'
-"let g:user_emmet_install_global = 0
-"autocmd FileType html,css EmmetInstall
+
 " Prettier
 nnoremap <silent><leader>p :Prettier<CR>
 "  }}}
