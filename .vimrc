@@ -191,10 +191,13 @@ let g:ale_sign_error = '>>'
 
 " Prettier
 nnoremap <silent><leader>p :Prettier<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
 "  }}}
 
 " Theming
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " let g:molokai_original = 1
 " let g:rehash256 = 1
 let g:airline_theme='materialmonokai'
