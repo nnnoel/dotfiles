@@ -52,7 +52,10 @@ nnoremap <silent><leader>ypwd :call system('pbcopy', expand('%'))<CR>
 vnoremap <silent><leader>y y<ESC>:call system('pbcopy', @")<CR>
  
 " Buffers
-nnoremap <leader>m :buffers<CR>
+nnoremap <silent><leader>m :buffers<CR>
+nnoremap <silent><leader>bn :bn<CR>
+nnoremap <silent><leader>bp :bp<CR>
+nnoremap <silent><leader>bd :bd<CR>
 
 nnoremap <silent><Tab>h :tabprevious<CR>
 nnoremap <silent><Tab>l :tabnext<CR>
