@@ -167,6 +167,7 @@ function! s:fzf_neighbouring_files()
 	\})
 endfunction
 command! FZFNeigh call s:fzf_neighbouring_files()
+
 " VimTags
 let g:vim_tags_cache_dir = expand("$HOME/.vim/tmp")
 let g:vim_tags_ignore_files = [
@@ -181,9 +182,12 @@ let g:vim_tags_ignore_files = [
 let NERDTreeShowHidden = 1
 noremap <silent><leader>t :NERDTreeFocus<CR>
 noremap <silent><leader>f :NERDTreeFind<CR>
+noremap <silent><leader>nt :NERDTreeToggle<CR>
+
 " EasyAlign
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
+
 " ALE
 let b:ale_fixers = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
