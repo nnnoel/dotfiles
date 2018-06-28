@@ -114,6 +114,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'skielbasa/vim-material-monokai'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 Plug 'scrooloose/nerdtree'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
