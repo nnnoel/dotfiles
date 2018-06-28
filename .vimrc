@@ -46,6 +46,8 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nnoremap B ^
 nnoremap E $
 
+nnoremap <silent><leader>q :q<CR>
+
 " Copy to System Clipboard
 " Mac
 nnoremap <silent><leader>ypwd :call system('pbcopy', expand('%'))<CR>
