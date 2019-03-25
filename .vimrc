@@ -7,15 +7,17 @@ set encoding=utf8
 set nu "number"
 set rnu "relativenumber"
 set nowrap
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set novisualbell
 set belloff=all
 set title
-" set hlsearch
 set backup
 set undofile
 set noswapfile
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set noro
 
 " Directory for session files
 set directory=$HOME/.vim/tmp/
@@ -40,13 +42,13 @@ nnoremap <localleader>[ <ESC> :vertical resize -2 <CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-" nnoremap <Space> :noh<CR>
-
 " Begin/end of line
 nnoremap B ^
 nnoremap E $
 
 nnoremap <silent><leader>q :q<CR>
+nnoremap <silent><leader>w :w<CR>
+nnoremap <silent><leader>wq :wq<CR>
 
 " Copy to System Clipboard
 " Mac
@@ -69,6 +71,7 @@ nnoremap <silent><Tab>q :tabclose<CR>
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
 nnoremap <leader>ps :PlugStatus<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
 
 " Filetype snippets --- {{{
 " CSS snippets
@@ -81,11 +84,12 @@ augroup END
 " JS snippets
 augroup js_snippets
     autocmd!
-    autocmd FileType javascript iabbrev af () => {}<Left>
-    autocmd FileType javascript iabbrev ff () {}<Left>
-    autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>
-    autocmd FileType javascript vnoremap <buffer> <localleader>c :s!^!//!<CR>
-    autocmd FileType javascript nnoremap <buffer> <localleader>de ggO /* eslint-disable */<ESC>
+    autocmd Filetype javascript,typescript setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript,typescript iabbrev af () => {}<Left>
+    autocmd FileType javascript,typescript iabbrev ff () {}<Left>
+    autocmd FileType javascript,typescript nnoremap <buffer> <localleader>c I// <ESC>
+    autocmd FileType javascript,typescript vnoremap <buffer> <localleader>c :s!^!//!<CR>
+    autocmd FileType javascript,typescript nnoremap <buffer> <localleader>de ggO /* eslint-disable */<ESC>
 augroup END
 
 " Python snippets
@@ -99,6 +103,21 @@ augroup sh_snippets
     autocmd!
     autocmd FileType sh nnoremap <buffer> <localleader>c I# <ESC>
 augroup END
+
+" Image snippets
+augroup image_snippets
+	autocmd!
+	autocmd BufEnter *.png,*.jpg,*gif exec "! ~/.iterm2/imgcat ".expand("%") | :bw
+augroup END
+
+" PHP snippets
+augroup php_snippets
+    autocmd!
+    autocmd FileType php nnoremap <buffer> <localleader>c I// <ESC>
+    autocmd FileType php vnoremap <buffer> <localleader>c :s!^!//!<CR>
+    autocmd Filetype php setlocal ts=4 sts=4 sw=4
+	au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+augroup END
 " }}}
 
 " Vimscript file settings --- {{{
@@ -111,30 +130,28 @@ augroup END
 
 "  Plugins --- {{{
 call plug#begin('~/.vim/plugged')
-Plug 'skielbasa/vim-material-monokai'
+Plug 'cocopon/iceberg.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'jparise/vim-graphql'
+Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'ternjs/tern_for_vim'
-"Plug 'marijnh/tern_for_vim'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'severin-lemaignan/vim-minimap'
 Plug 'yangmillstheory/vim-snipe'
 Plug 'szw/vim-tags'
-Plug 'junegunn/vim-easy-align'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'w0rp/ale'
+Plug 'chr4/nginx.vim'
 call plug#end()
 "  }}}
 "
@@ -196,21 +213,19 @@ let g:ale_sign_error = '>>'
 
 " Prettier
 nnoremap <silent><leader>p :Prettier<CR>
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'none'
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 "  }}}
 
 " Theming
-" let g:airline_powerline_fonts = 1
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-let g:airline_theme='materialmonokai'
+let g:airline_theme='iceberg'
+let g:NERDTreeNodeDelimiter = "\u00a0"
+" let g:EditorConfig_disable_rules = ['trim_trailing_whitespace']
 
 " syntax enable
 set termguicolors
-colorscheme material-monokai
-
-"if exists("g:loaded_webdevicons")
-"  call webdevicons#refresh()
-"endif
+colorscheme iceberg
