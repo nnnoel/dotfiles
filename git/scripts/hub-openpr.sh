@@ -2,11 +2,11 @@
 # Author: Noel Colon <ncolon20@gmail.com>
 
 # for external tickets
-echo ticket# 
+echo ticket#
 read TICKET_URL
 ticket_url="[TICKET]($TICKET_URL)"
 
-echo screenshots? 
+echo screenshots?
 read SCREENSHOTS
 
 if [[ $SCREENSHOTS == 'y'  ]]; then
@@ -31,7 +31,7 @@ BASE=
 USERS=
 LABELS=
 
-hub pull-request -b $BASE -r $USERS -l $LABELS -F- <<<"$SUBJECT
+hub pull-request -b "$BASE" -r "USERS" -l "$LABELS" -F- <<<"$SUBJECT
 
 
 $ticket_url
@@ -41,4 +41,3 @@ $COMMITS
 $screenshots_template
 
 $checklist_template"
-
