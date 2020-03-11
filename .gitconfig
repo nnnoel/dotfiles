@@ -3,11 +3,14 @@
 	email = ncolon20@gmail.com 
 [alias]
 	last = log -1 HEAD
-	log1 = log --oneline
 	unstage = reset HEAD --
 	branchname = rev-parse --abbrev-ref HEAD
 	rawbody = show -s --format=%B
-	lastcommit = !sh ~/.dotfiles/.github/git-lastcommit.sh
-	lastbranch = !sh ~/.dotfiles/.github/git-lastbranch.sh
-	openpr = !sh ~/.dotfiles/.github/hub-openpr.sh
-	branches = !sh ~/.dotfiles/.github/git-branches.sh
+	lastcommit = !sh ~/.dotfiles/git/scripts/git-lastcommit.sh
+	lastbranch = !sh ~/.dotfiles/git/scripts/git-lastbranch.sh
+	openpr = !sh ~/.dotfiles/git/scripts/hub-openpr.sh
+	branches = !sh ~/.dotfiles/git/scripts/git-branches.sh
+  rb = !sh ~/.dotfiles/git/scripts/git-reset-branch.sh
+  cp = cherry-pick
+[web]
+	browser = open
