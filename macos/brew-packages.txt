@@ -1,0 +1,37 @@
+# Formulae
+deno
+docker
+fzf
+gcc
+gh
+git
+git-gui
+htop
+lazygit
+lsd
+neovim
+tig
+tmux
+tree
+wifi-password
+zsh
+
+# Casks
+android-studio
+anki
+cursor
+figma
+fing
+google-chrome
+iterm2
+obsidian
+proxyman
+rectangle
+slack
+spotify
+tableplus
+telegram
+whatsapp
+windsurf
+zalo
+zoom

@@ -1,9 +1,0 @@
-#!/bin/sh
-# Author: Noel Colon
-
-# If a value for git config commit.prefix exists,
-# than prepend it to the commit subject line
-
-PREFIX=$(git config --get commit.prefix)
-
-[ -n "$PREFIX" ] && echo "$PREFIX" $(cat "$1") > "$1" || echo $1

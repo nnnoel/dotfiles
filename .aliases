@@ -1,24 +1,48 @@
-alias zshrc="vim ~/.dotfiles/.zshrc"
-alias rzsh="source ~/.dotfiles/.zshrc"
-alias vimrc="vim ~/.dotfiles/.vimrc"
-alias aliases="vim ~/.dotfiles/.aliases"
-alias gitconfig="vim ~/.dotfiles/.gitconfig"
-alias dotfiles="cd ~/.dotfiles"
+# General Aliases
+alias vim="nvim"
+alias zshrc="vim ~/.zshrc"
+alias rzsh="source ~/.zshrc"
+alias vimrc="vim ~/.config/nvim"
+alias aliases="vim ~/.aliases"
+alias gitconfig="vim ~/.gitconfig"
+alias dotfiles="vim ~/.dotfiles"
 
 alias cls="clear"
+alias ls="lsd"
 alias l="ls -lha"
 
-alias ys="yarn start"
-alias yis="yarn;yarn start"
-
+# Git Aliases
 alias gl1="git log --oneline"
 alias gcob="git checkout -B"
 alias gco="git checkout"
 alias gbd="git branch -D"
-alias gfu="git fetch upstream"
 alias gfo="git fetch origin"
-alias glb="git lastbranch"
-alias glc="git lastcommit"
-alias gss="git status -s"
-alias gbb="git branches"
+alias grom="git reset --hard origin/main"
+alias gform="gfo && grom"
+alias glb="sh ~/dev/dotfiles/git/scripts/git-lastbranch.sh"
+alias gbb="sh ~/dev/dotfiles/git/scripts/git-branches.sh"
+alias grn="sh ~/dev/dotfiles/git/scripts/git-branch-rename.sh"
+alias grb="sh ~/dev/dotfiles/git/scripts/git-reset-branch.sh"
 
+alias tmp="git commit -m 'tmp' --no-verify"
+
+alias gunstage="git reset HEAD --"      
+alias gbranchname="git rev-parse --abbrev-ref HEAD"
+alias gcp="git cherry-pick"             
+
+# Project Navigation
+alias projects="cd ~/dev/personal/projects"
+
+# Tmux
+alias tmuxrc="nvim ~/dotfiles/.tmux.conf"
+
+# Android Development
+alias adb="~/Library/Android/sdk/platform-tools/adb"
+
+# PostgreSQL Logs
+tail_psql_logs() {
+  tail -f /usr/local/var/log/postgres.log
+}
+
+# Helper: Reset PostgreSQL
+alias fixpostgresql="rm -f /usr/local/var/postgres/postmaster.pid"

@@ -23,7 +23,7 @@ BRANCH="${BRANCHES[choice]}"
 
 case "$option" in
 	"a"):
-		printf "Checkout $(print_y $BRANCH) ? (y/n)\n" 
+		printf "Checkout $(print_y $BRANCH) ? (y/n)\n"
 		read confirmation
 		if [[ $confirmation == 'y'  ]]; then
 			git checkout $BRANCH
@@ -31,7 +31,7 @@ case "$option" in
 		fi
 		;;
 	"b"):
-		printf "Delete $(print_y $BRANCH) ? (y/n)\n" 
+		printf "Delete $(print_y $BRANCH) ? (y/n)\n"
 		read confirmation
 		if [[ $confirmation == 'y'  ]]; then
 			git branch -D $BRANCH
@@ -39,7 +39,7 @@ case "$option" in
 		fi
 		;;
 	"c"):
-		printf "Copy $(print_y $BRANCH) ? (y/n)\n" 
+		printf "Copy $(print_y $BRANCH) ? (y/n)\n"
 		read confirmation
 		if [[ $confirmation == 'y'  ]]; then
 			copy_to_clipboard $BRANCH
